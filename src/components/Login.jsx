@@ -3,7 +3,7 @@ import { useState } from "react";
 import Logo from "./Logo";
 import "./styles/Login.css";
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -15,6 +15,13 @@ const Login = () => {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  // handleSubmit prevents the default browser behavior and calls
+  // the login handler.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(data);
   };
 
   return (

@@ -3,7 +3,10 @@ import { useState } from "react";
 import Logo from "./Logo";
 import "./styles/Register.css";
 
-const Register = () => {
+const Register = ({ handleRegistration }) => {
+  // The inputs are controlled via a single piece of state: an object
+  // object called `data`. This lets us avoid writing separate change
+  // handlers for each input.
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -11,12 +14,26 @@ const Register = () => {
     confirmPassword: "",
   });
 
+  // This function fires whenever an input is changed, and it updates
+  // the value of the changed input. Note that the keys of this
+  // object match the name attributes of the corresponding inputs.
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+  };
+
+  // Declare a submission handler function. This function just needs
+  // to prevent the default browser behavior, and call
+  // handleRegistration, passing it the data from the form
+  // submission.
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegistration(data);
   };
 
   return (
