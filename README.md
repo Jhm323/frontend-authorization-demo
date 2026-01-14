@@ -21,14 +21,6 @@ The app contains **highly sensitive information**, and users must sign in or reg
 
 ---
 
-## 📸 Screenshots
-
-![Screenshot 1](image1)
-
-![Screenshot 2](image2)
-
----
-
 ## 🚀 Features
 
 - **User Authentication**
