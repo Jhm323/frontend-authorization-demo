@@ -1,3 +1,20 @@
+import { useState, useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+import Ducks from "./Ducks";
+import MyProfile from "./MyProfile";
+import Login from "./Login";
+import Register from "./Register";
+import * as auth from "../utils/auth";
+import * as api from "../utils/api";
+import { setToken, getToken } from "../utils/token";
+
 function App() {
   const [userData, setUserData] = useState({ username: "", email: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -124,3 +141,5 @@ function App() {
     </Routes>
   );
 }
+
+export default App;

@@ -1,37 +1,100 @@
 .duck-card {
-  border: 2px solid #02ff00;
-  width: 50%;
-  margin-top: 64px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 400px;
+  max-height: 500px;
+}
+
+.duck-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
 }
 
 .duck-card__image {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 36px;
+  padding: 32px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  min-height: 250px;
+}
+
+.duck-card__png {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.duck-card:hover .duck-card__png {
+  transform: scale(1.05);
 }
 
 .duck-card__desc {
-  border-top: 2px solid #02ff00;
-  padding: 36px;
+  padding: 24px;
+  background: white;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .duck-card__name {
   font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.duck-card__text {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
 }
 
 @media screen and (max-width: 700px) {
-  .duck-card__png {
-    width: 200px;
+  .duck-card__image {
+    min-height: 200px;
+    padding: 24px;
   }
 
-  .duck-card {
-    width: 70%;
+  .duck-card__png {
+    max-height: 150px;
+  }
+
+  .duck-card__desc {
+    padding: 20px;
+  }
+
+  .duck-card__name {
+    font-size: 20px;
+  }
+
+  .duck-card__text {
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 400px) {
+  .duck-card__image {
+    min-height: 150px;
+    padding: 16px;
+  }
+
   .duck-card__png {
-    width: 100px;
+    max-height: 120px;
   }
 }

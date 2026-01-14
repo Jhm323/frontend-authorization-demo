@@ -9,7 +9,13 @@ export const register = (username, password, email) => {
     },
     body: JSON.stringify({ username, password, email }),
   }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    if (res.ok) {
+      return res.json();
+    }
+    return res.json().then((err) => {
+      console.error("Registration error:", JSON.stringify(err, null, 2));
+      return Promise.reject(err);
+    });
   });
 };
 
@@ -22,6 +28,12 @@ export const authorize = (identifier, password) => {
     },
     body: JSON.stringify({ identifier, password }),
   }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    if (res.ok) {
+      return res.json();
+    }
+    return res.json().then((err) => {
+      console.error("Login error:", JSON.stringify(err, null, 2));
+      return Promise.reject(err);
+    });
   });
 };

@@ -1,52 +1,90 @@
+.registerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
 .register {
-  border: 2px solid #02ff00;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 36px;
-  justify-content: center;
-  width: 50%;
+  padding: 48px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .register__welcome {
-  margin-top: 32px;
+  margin-top: 24px;
+  color: #666;
+  text-align: center;
+  font-size: 16px;
 }
 
 .register__error {
-  color: #02ff00;
+  color: #dc3545;
+  background: #fee;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 16px;
+  text-align: center;
 }
 
 .register__form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  width: 80%;
-  margin-top: 12px;
-}
-
-.register__form input {
-  background-color: #000000;
-  border: 2px solid #02ff00;
-  color: #02ff00;
+  margin-top: 32px;
 }
 
 .register__form label {
-  margin-top: 12px;
-  margin-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.register__form input {
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.register__form input:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .register__button-container {
   display: flex;
   justify-content: center;
+  margin-top: 32px;
 }
 
 .register__link {
-  color: #02ff00;
-  text-align: center;
-  margin-top: 32px;
-  width: 20%;
-  background-color: black;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 14px 48px;
   border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 .register__signin {
@@ -54,12 +92,27 @@
   align-items: center;
   justify-content: center;
   margin-top: 32px;
+  gap: 8px;
 }
 
 .register__signin p {
-  margin-right: 12px;
+  color: #666;
+  margin: 0;
 }
 
 .register__login-link {
-  color: white;
+  color: #667eea;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register__login-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .register {
+    padding: 32px 24px;
+  }
 }

@@ -31,7 +31,7 @@ const Login = ({ handleLogin }) => {
         This app contains highly sensitive information. Please sign in or
         register to access CryptoDucks.
       </p>
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleSubmit}>
         <label htmlFor="username">Login:</label>
         <input
           id="username"
