@@ -64,6 +64,13 @@ function App() {
       .catch(console.error);
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    setUserData({ username: "", email: "" });
+    navigate("/login");
+  };
+
   useEffect(() => {
     const jwt = getToken();
 
@@ -88,7 +95,7 @@ function App() {
         path="/ducks"
         element={
           <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <Ducks />
+            <Ducks onSignOut={handleSignOut} />
           </ProtectedRoute>
         }
       />
@@ -97,7 +104,7 @@ function App() {
         path="/my-profile"
         element={
           <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <MyProfile userData={userData} />
+            <MyProfile userData={userData} onSignOut={handleSignOut} />
           </ProtectedRoute>
         }
       />

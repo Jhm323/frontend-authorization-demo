@@ -63,8 +63,8 @@ The app contains **highly sensitive information**, and users must sign in or reg
 
 Use the following credentials to explore the app:
 
-Username: Mallard
-Password: Quack42
+Username: Looney
+Password: Quack45
 
 yaml
 Copy code

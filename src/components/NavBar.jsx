@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import "./styles/NavBar.css";
 
-function NavBar() {
+function NavBar({ onSignOut }) {
   return (
     <div className="navbar">
       <div className="navbar__logo">
@@ -20,7 +20,9 @@ function NavBar() {
           </NavLink>
         </li>
         <li>
-          <button className="navbar__link navbar__button">Sign Out</button>
+          <button className="navbar__link navbar__button" onClick={onSignOut}>
+            Sign Out
+          </button>
         </li>
       </ul>
     </div>
