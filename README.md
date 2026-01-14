@@ -21,6 +21,14 @@ The app contains **highly sensitive information**, and users must sign in or reg
 
 ---
 
+## 📸 Project Screenshots
+
+![CryptoDucks Screenshot 1](src/assets/images/ducks1.png)
+
+![CryptoDucks Screenshot 2](src/assets/images/ducks2.png)
+
+---
+
 ## 🚀 Features
 
 - **User Authentication**
